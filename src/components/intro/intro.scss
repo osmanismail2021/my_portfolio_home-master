@@ -1,0 +1,183 @@
+.intro {
+    background: rgba(206,188,155,1);
+  background: -moz-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(206,188,155,1)), color-stop(51%, rgba(85,63,50,1)), color-stop(100%, rgba(42,31,25,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  background: linear-gradient(135deg, rgba(206,188,155,1) 0%, rgba(85,63,50,1) 51%, rgba(42,31,25,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cebc9b', endColorstr='#2a1f19', GradientType=1 );
+    display: flex;
+
+    .left{
+        flex: 0.5;
+        overflow: hidden;
+
+        .imgContainer{
+            width: 700px;
+            height: 100vh;
+            clip-path: polygon(0% 0%, 90% 0, 100% 50%, 90% 100%, 0% 100%);
+            background-color: rgba(53, 37, 4, 0.89);
+            display: flex;
+            align-items: flex-end;
+            // margin-top: 20px;
+            // margin-left: 60px;
+            
+            img{
+            width: 100%;
+            height: 100%;
+            }
+        }
+    }
+    .right{
+        flex: 0.5;
+        position: relative;
+        
+
+        .wrapper{
+            width: 100%;
+            height: 100%;
+            padding-left: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+
+            h1{
+                margin-left: -50px;
+                font-family: 'Fredoka', sans-serif;
+                font-size: 4em;
+                font-weight: 700;
+                color: #ffffff;
+                text-shadow: 1px 1px 1px #111010,
+                    1px 2px 1px #1d0f0f,
+                    1px 3px 1px #160d0d,
+                    1px 4px 1px #0c0707,
+                    1px 5px 1px #110606,
+                    1px 6px 1px #919191,
+                    1px 7px 1px #919191,
+                    1px 8px 1px #919191,
+                    1px 9px 1px #919191,
+                    1px 10px 1px #919191,
+                1px 18px 6px rgba(16,16,16,0.4),
+                1px 22px 10px rgba(16,16,16,0.2),
+                1px 25px 35px rgba(16,16,16,0.2),
+                1px 30px 60px rgba(16,16,16,0.4);
+            }
+
+            .box{
+                display: flex;
+                margin-left: -210px;
+
+                .inner{
+                    width: 400px;
+                    height: 200px;
+                    line-height: 200px;
+                    font-size: 4em;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    white-space: nowrap;
+                    overflow: hidden;
+    
+                &:first-child {
+                        background-color: rgba(53, 37, 4, 0.89);
+                        color: rgb(0, 0, 0);
+                        transform-origin: right;
+                        transform: perspective(100px) rotateY(-15deg);
+                    }
+                    
+                &:last-child {
+                        background-color: rgba(63, 44, 5, 0.89);
+                        color: antiquewhite;
+                        transform-origin: left;
+                        transform: perspective(100px) rotateY(15deg);
+                    }
+                    
+                span {
+                        position: absolute;
+                        animation: marquee 5s linear infinite;
+                    }
+                    
+                &:first-child span {
+                        animation-delay: 2.5s;
+                        left: -100%;
+                    }
+                    
+                    @keyframes marquee {
+                        from {
+                            left: 100%;
+                        }
+                    
+                        to {
+                            left: -100%;
+                        }
+                    }
+                }
+            }
+            
+            h3{
+                font-size: 30px;
+
+                span{
+                    font-size: inherit;
+                    color: #fff;
+                    text-shadow:
+                        0 0 7px rgb(236, 39, 82),
+                        0 0 10px rgb(231, 26, 70),
+                        0 0 21px rgb(240, 10, 60),
+                        0 0 42px rgb(52, 18, 145),
+                        0 0 82px rgb(52, 18, 145),
+                        0 0 92px rgb(52, 18, 145),
+                        0 0 102px rgb(52, 18, 145),
+                        0 0 151px rgb(52, 18, 145);
+                                    }
+
+                .ityped-cursor{
+                        animation: blink 1s infinite;
+                                    }
+
+                        @keyframes blink {
+                            50%{
+                                opacity: 1;
+                            }
+                            100%{
+                                opacity: 0;
+                            }
+                        }
+                                }
+
+                                .cv{
+                                    margin-bottom: 230px;
+                                    padding: 5px ;
+                                    color: white;
+                                    background-color: #2e1b01;
+                                    text-align: center;
+                                    margin-left: -50px;
+                                    font-size: 20px;
+                                    border: 2px;
+                                    border-style: solid;
+                                    border-radius: 5px;
+                                    text-decoration: none;
+
+
+                                }
+        
+                            }
+        a{
+            position: absolute;
+            bottom: 10px;
+            left: 30%;
+
+            img{
+                width: 30px;
+                animation: arrowBlink 2s infinite;
+            }
+
+            @keyframes arrowBlink {
+                100%{
+                    opacity: 0;
+                }
+            }
+        }  
+    }
+}
