@@ -1,10 +1,16 @@
 import "./portfolio.scss"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
+import {
+  featuredPortfolio,
+  webPortfolio,
+  mobilePortfolio,
+} from "../../data"
 
 
 export default function Portfolio() {
-  const [selected, setSelected] = useState("featured")
+  const [selected, setSelected] = useState("featured");
+  const [data, setData] = useState([]);
   const list = [
     {
         id: "featured",
@@ -19,6 +25,25 @@ export default function Portfolio() {
         title: "Mobile App",
     }
 ];
+
+useEffect(()=>{
+    switch(selected){
+      case "featured":
+        setData(featuredPortfolio);
+        break;
+      case "web":
+          setData(webPortfolio);
+          break;
+      case "mobile":
+            setData(mobilePortfolio);
+            break;
+      default:
+        setData(featuredPortfolio);
+  }
+},[selected])
+
+
+
   return (
     <div className='portfolio' id="portfolio">
         <h1>Portfolio</h1>
@@ -32,33 +57,16 @@ export default function Portfolio() {
           ))}
         </ul>
         <div className="container">
+            {data.map((d)=> (
           <div className="item">
-            <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="" />
-            <h3>Chat App</h3>
+            <img 
+            src={d.img}
+            alt="" />
+            <h3>{d.title}</h3>
           </div>
-          <div className="item">
-            <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="" />
-            <h3>Chat App</h3>
-          </div>
-          <div className="item">
-            <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="" />
-            <h3>Chat App</h3>
-          </div>
-          <div className="item">
-            <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="" />
-            <h3>Chat App</h3>
-          </div>
-          <div className="item">
-            <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="" />
-            <h3>Chat App</h3>
-          </div>
-          <div className="item">
-            <img src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="" />
-            <h3>Chat App</h3>
-          </div>
-          
+          ))}
         </div>
-    </div>
+      </div>
   )
 }
 
